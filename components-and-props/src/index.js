@@ -7,11 +7,12 @@ const App = () => {
 		<div className="ui container comments">
 
 			{/*how to call outside components into other components*/}
-			<CommentDetail/>
-			<CommentDetail/>
-			<CommentDetail/>
-			<CommentDetail/>
-			<CommentDetail/>
+			<CommentDetail author ="Sam Jones"/>
+			<CommentDetail author ="Sam James"/>
+			<CommentDetail author ="Sam Smith"/>
+			<CommentDetail author ="Sam Foo"/>
+			<CommentDetail author ="Sam Bar"/>
+
 		</div>
 	);
 
