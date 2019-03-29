@@ -10,6 +10,10 @@ const App = () => {
 		<div className="ui container comments">
 			{/*pass child elements by wrapping them in the parents element tag*/}
 			<ApprovalCard>
+				<h2>party at masons house!!!</h2>
+
+			</ApprovalCard>
+			<ApprovalCard>
 				<CommentDetail author={faker.name.firstName()}
 									timeAgo={faker.date.past().toString()}
 									avatar={faker.image.avatar()}
