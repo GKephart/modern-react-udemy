@@ -4,7 +4,7 @@ import CommentDetail from "./CommentDetail";
 import faker from "faker";
 
 const App = () => {
-	const getSaneDate = () =>{
+	const getSaneDate = () => {
 		return "I really despise dates"
 
 	};
@@ -12,8 +12,11 @@ const App = () => {
 	return (
 		<div className="ui container comments">
 			{/*how to call outside components into other components*/}
-			<CommentDetail author ={faker.name.firstName()} timeAgo="I really despise dates" avatar={getSaneDate()} text={faker.lorem.sentences()}/>
-
+			<CommentDetail author={faker.name.firstName()}
+								timeAgo={faker.date.past().toString()}
+								avatar={faker.image.avatar()}
+								text={faker.lorem.sentence()}
+			/>
 		</div>
 	);
 
