@@ -8,6 +8,10 @@ const App = () => {
 
 			{/*how to call outside components into other components*/}
 			<CommentDetail/>
+			<CommentDetail/>
+			<CommentDetail/>
+			<CommentDetail/>
+			<CommentDetail/>
 		</div>
 	);
 
