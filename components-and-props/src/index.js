@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CommentDetail from "./CommentDetail";
+import faker from "faker";
 
 const App = () => {
+	const getSaneDate = () =>{
+		return "I really despise dates"
+
+	};
+
 	return (
 		<div className="ui container comments">
-
 			{/*how to call outside components into other components*/}
-			<CommentDetail author ="Sam Jones"/>
-			<CommentDetail author ="Sam James"/>
-			<CommentDetail author ="Sam Smith"/>
-			<CommentDetail author ="Sam Foo"/>
-			<CommentDetail author ="Sam Bar"/>
+			<CommentDetail author ={faker.name.firstName()} timeAgo="I really despise dates" avatar={getSaneDate()} text={faker.lorem.sentences()}/>
 
 		</div>
 	);

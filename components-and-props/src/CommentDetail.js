@@ -3,24 +3,21 @@ import React from 'react';
 import faker from 'faker'
 
 const CommentDetail= (props) => {
-	console.log(props);
 
 	return(
 		<div className="comment">
 			<a href="/" className="avatar">
-				<img alt="avatar" src={faker.image.avatar()}/>
+				<img alt="avatar" src={props.avatar}/>
 			</a>
 			<div className="content">
 				<a href="http://" className="author">
 					{props.author}
 				</a>
 				<div className="metadata">
-					<span className="date">Today at 6:35pm</span>
+					<span className="date">{props.timeAgo}</span>
 				</div>
 				<div className="text">
-					Can you pimp this powerpoint, need more geometry patterns i love it, but can you invert all colors? or
-					just do what you think. I trust you, or that's great, but we need to add this 2000 line essay yet just
-					do what you think.
+					{props.text}
 				</div>
 			</div>
 		</div>
