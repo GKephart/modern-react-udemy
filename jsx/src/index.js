@@ -16,7 +16,7 @@ const App = () => {
 	//es6 accessor function
 	const getButtonText = () => "click me pretty please";
   return(
-	  <div><label className="label" for="name">Enter Name</label>
+	  <div><label className="label" htmlFor="name">Enter Name</label>
 		  <input type="text"/>
 		  <button style={{backgroundColor:'blue', color: 'white'}}>{buttonText}</button>
 		  <button style={{backgroundColor:'white', color: 'blue'}}>{buttonTextArray}</button>
