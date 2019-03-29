@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 import faker from 'faker'
 
 const CommentDetail= () => {
@@ -24,3 +24,5 @@ const CommentDetail= () => {
 		</div>
 	)
 };
+
+export default CommentDetail;
