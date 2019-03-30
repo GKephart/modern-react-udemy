@@ -27,8 +27,8 @@ class App extends React.Component {
 					//never directly set state after init TLDR this.state.foo = "Y U NO use this.setState() mutator"
 					console.log(position);
 				} ,
-				() => {
-					this.setState({lat: - 35.11});
+				(error) => {
+					this.setState({lat: - 35.11, error: error.message});
 
 				}
 			);
@@ -36,6 +36,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<h1>mason is a {foo} {this.state.lat} bear</h1>
+				mason {foo} bear caused a {this.state.message}
 			</div>
 		)
 	}
