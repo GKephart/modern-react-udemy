@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 
-let foo = "bar";
+let foo = "poo";
+let getCurrentLocation = () => (
+	window.navigator.geolocation.getCurrentPosition(
+		position => console.log(position),
+		error => console.log(error)
+	));
+
 const App = () => (
 	<div>
-		<h1>mason is a {foo} bear</h1>
+		<h1>mason is a {foo} {getCurrentLocation()} bear</h1>
 	</div>
 );
 
-ReactDOM.render(<App />, document.querySelector('#root',));
+ReactDOM.render(<App/>, document.querySelector('#root',));
