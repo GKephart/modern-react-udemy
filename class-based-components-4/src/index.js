@@ -4,6 +4,15 @@ import ReactDOM from 'react-dom'
 
 class App extends React.Component {
 
+	//same constructor different language
+	constructor(props) {
+		//supper passes data into React.Component's constructor.
+		super(props);
+
+		// sets up state for the App object
+		this.state = {lat: null};
+	}
+
 
 	//react demands we have a render method if we extend React.Component cough cough contract.
 	render() {
