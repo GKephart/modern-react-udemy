@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 let foo = "poo";
 let getCurrentLocation = () => (
 	window.navigator.geolocation.getCurrentPosition(
-		position => console.log(position),
+		position => position,
 		error => console.log(error)
 	));
 
