@@ -18,15 +18,24 @@ class App extends React.Component {
 	render() {
 		let foo = "poo";
 
-		let getCurrentLocation = () => (
 			window.navigator.geolocation.getCurrentPosition(
-				position => console.log(position),
-				error => console.log(error)
-			));
+				position => {
+
+					//in order to update state the setState mutator must be called
+					this.setState({lat: position.coords.latitude});
+
+					//never directly set state after init TLDR this.state.foo = "Y U NO use this.setState() mutator"
+					console.log(position);
+				} ,
+				() => {
+					this.setState({lat: - 35.11});
+
+				}
+			);
 
 		return (
 			<div>
-				<h1>mason is a {foo} {getCurrentLocation()} bear</h1>
+				<h1>mason is a {foo} {this.state.lat} bear</h1>
 			</div>
 		)
 	}
