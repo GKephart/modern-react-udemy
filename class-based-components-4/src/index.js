@@ -32,13 +32,22 @@ class App extends React.Component {
 		console.log(prevProps, prevState, snapshot, "mason" + this.state.foo +"bear caused an update" )
 	}
 
-	//react demands we have a render method if we extend React.Component cough cough contract.
-	render() {
-
+	renderContent() {
 		if(!this.state.error && this.state.lat) {
 			return <SeasonDisplay lat={this.state.lat}/>
+		} else if(this.state.error && this.state.lat) {
+			return <Spinner/>
 		}
 		return <Spinner message="cmd-space.stream needs to know your location"/>
+
+	}
+	//react demands we have a render method if we extend React.Component cough cough contract.
+	render() {
+		return(
+			<div className="border red">
+				{this.renderContent()}
+			</div>
+		)
 	}
 }
 
