@@ -12,8 +12,16 @@ class App extends React.Component {
 		super(props);
 
 		// sets up state for the App object
-		this.state = {lat: null};
+		this.state = {lat: null, foo: "poo"};
 
+
+
+	}
+
+	/**
+	 * init loading of data should only occur in the componentDidMount metho
+	 */
+	componentDidMount() {
 
 		window.navigator.geolocation.getCurrentPosition(
 			position => {
@@ -32,12 +40,11 @@ class App extends React.Component {
 	}
 
 
-	componentDidMount() {
-		console.log("Mason poo bear rendered")
-	}
-
+	/**
+	 *update should be called when data needs to be loaded after init when props/state need to change
+	 */
 	componentDidUpdate(prevProps, prevState, snapshot) {
-		console.log(prevProps, prevState, snapshot, "Mason Poo Bear updtae")
+		console.log(prevProps, prevState, snapshot, "mason" + this.state.foo +"bear caused an update" )
 	}
 
 	//react demands we have a render method if we extend React.Component cough cough contract.
