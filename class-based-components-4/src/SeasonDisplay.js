@@ -1,13 +1,15 @@
+
+import './SeasonDisplay.css';
 import React from 'react';
 
 const seasonConfig = {
 	summer: {
 		text: "Mason's super soft party will be hawt",
-		iconName: 'fire'
+		icon: 'thumbs up'
 	},
 	winter: {
 		text: "Mason's super soft party will be chilly",
-		iconName: "ice"
+		icon: "thumbs down"
 
 	}
 };
@@ -23,11 +25,11 @@ const SeasonDisplay = (props) => {
 	const {text, icon} = seasonConfig[currentSeason];
 
 	return (
-		<>
-			<i className={`${icon} icon`}/>
+		<div className={`season-display ${currentSeason}`}>
+			<i className={`icon-left massive ${icon} icon`}/>
 			<h2>{text}</h2>
-			<i className={`${icon} icon`}/>
-		</>
+			<i className={`icon-right massive ${icon} icon`}/>
+		</div>
 	);
 };
 export default SeasonDisplay;
