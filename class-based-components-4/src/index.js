@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import SeasonDisplay from "./SeasonDisplay";
+import Spinner from "./shared/components/Spinner";
 
 
 class App extends React.Component {
@@ -34,13 +35,10 @@ class App extends React.Component {
 	//react demands we have a render method if we extend React.Component cough cough contract.
 	render() {
 
-		return <SeasonDisplay lat={this.state.lat}/>
-		// if(!this.state.error && this.state.lat) {
-		//
-		// } else if (this.state.error && !this.state.lat !== -35){
-		// 	return <div>Mason {this.state.foo} Bear caused {this.state.error}</div>
-		// }
-		// return <h1>Y U NO let me load</h1>
+		if(!this.state.error && this.state.lat) {
+			return <SeasonDisplay lat={this.state.lat}/>
+		}
+		return <Spinner message="cmd-space.stream needs to know your location"/>
 	}
 }
 
