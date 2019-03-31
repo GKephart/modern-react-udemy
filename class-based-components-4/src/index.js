@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom'
 
 class App extends React.Component {
 
+
+
 	//same constructor different language
 	constructor(props) {
 		//supper passes data into React.Component's constructor.
@@ -11,6 +13,7 @@ class App extends React.Component {
 
 		// sets up state for the App object
 		this.state = {lat: null};
+
 
 		window.navigator.geolocation.getCurrentPosition(
 			position => {
@@ -29,9 +32,20 @@ class App extends React.Component {
 	}
 
 
+	componentDidMount() {
+		console.log("Mason poo bear rendered")
+	}
+
+	componentDidUpdate(prevProps, prevState, snapshot) {
+		console.log(prevProps, prevState, snapshot, "Mason Poo Bear updtae")
+	}
+
 	//react demands we have a render method if we extend React.Component cough cough contract.
 	render() {
+
 		let foo = "poo";
+
+
 		if(!this.state.error && this.state.lat) {
 			return <div>Mason {foo} bear is eating a jar of honey @ {this.state.lat} </div>
 		} else if (!this.state.error && !this.state.lat !== -35){
