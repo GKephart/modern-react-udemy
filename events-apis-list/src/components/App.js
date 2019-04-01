@@ -1,6 +1,7 @@
 import React from 'react';
+import SearchBar from "./SearchBar";
 
 
-const App = () => <h2>App City Life</h2>
+const App = () => <SearchBar/>
 
 export default App
