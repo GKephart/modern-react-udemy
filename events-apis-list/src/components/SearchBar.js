@@ -13,7 +13,7 @@ class SearchBar extends React.Component {
 						<input
 							type="text"
 							value={this.state.term}
-							onChange ={event => this.setState({term: event.target.value})}
+							onChange ={event => this.setState({term: event.target.value.toLowerCase()})}
 						/>
 
 
