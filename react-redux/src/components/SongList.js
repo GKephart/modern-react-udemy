@@ -4,13 +4,13 @@ import {selectSong} from "../actions";
 
 class SongList extends Component {
 	renderList= () => (
-		this.props.songs.map(song => (
-			<div className="item" key={song.title}>
+		this.props.songs.map(index => (
+			<div className="item" key={index.title}>
 				<div className="right floated content">
-					<div onClick={() => this.props.selectSong(song)} className="ui button primary">Select</div>
+					<div onClick={() => this.props.selectSong(index)} className="ui button primary">Select</div>
 				</div>
 				<div className="content">
-					{song.title}
+					{index.title}
 				</div>
 			</div>
 			)
