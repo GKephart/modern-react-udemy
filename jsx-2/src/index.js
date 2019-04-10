@@ -27,6 +27,7 @@ const App = () => {
   );
 };
 
+
 // display the component on the domain
 ReactDOM.render(<App />, document.querySelector('#root',));
 
