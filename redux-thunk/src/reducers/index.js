@@ -4,5 +4,5 @@ import postsReducer from "./postsReducer";
 
 
 export default combineReducers({
-	mock: () => "data"
+	posts: postsReducer
 })
