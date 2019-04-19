@@ -19,13 +19,14 @@ export const  fetchPostsAndUsers = () => async (dispatch, getState) => {
 
 
 	//commented out lines below are equivalent to the _ chain method
-	const userIds = _.uniq(_.map(getState().posts, "userId"));
-	userIds.forEach(id => dispatch(fetchUser(id)));
-	_.chain(getState().posts)
-		.map("userId")
-		.uniq()
-		.forEach(id => dispatch(fetchUser(id)))
-		.value()
+	// const userIds = _.uniq(_.map(getState().posts, "userId"));
+	// userIds.forEach(id => dispatch(fetchUser(id)));
+
+_.chain(getState().posts)
+	.map("userId")
+	.uniq()
+	.forEach(id => dispatch(fetchUser(id)))
+	.value()
 };
 
 
